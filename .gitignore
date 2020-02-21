@@ -5,11 +5,12 @@
 
 # editors
 .idea
+.vscode
 
 # testing
 /coverage
 # production
-/build
+/dist
 
 # misc
 .DS_Store

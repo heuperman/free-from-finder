@@ -1,0 +1,38 @@
+{
+  "name": "free-from-finder",
+  "version": "1.0.0",
+  "description": "Find allergen-free food in your area",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "npx webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heuperman/free-from-finder.git"
+  },
+  "keywords": [
+    "allergens",
+    "food",
+    "restaurants",
+    "gluten-free"
+  ],
+  "author": "Cornelis Heuperman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heuperman/free-from-finder/issues"
+  },
+  "homepage": "https://github.com/heuperman/free-from-finder#readme",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^16.9.5",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.2",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
+}
