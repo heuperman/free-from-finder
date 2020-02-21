@@ -24,6 +24,7 @@
     "url": "https://github.com/heuperman/free-from-finder/issues"
   },
   "homepage": "https://github.com/heuperman/free-from-finder#readme",
+  "prettier": {},
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
@@ -33,10 +34,13 @@
     "@typescript-eslint/eslint-plugin": "^2.20.0",
     "@typescript-eslint/parser": "^2.20.0",
     "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^2.4.0",
+    "prettier": "^1.19.1",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.2",

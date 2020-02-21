@@ -9,7 +9,9 @@
         "plugin:react/recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:import/errors",
-        "plugin:jsx-a11y/recommended"
+        "plugin:jsx-a11y/recommended",
+        "prettier",
+        "prettier/react"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -33,12 +35,11 @@
     "rules": {
         "react/prop-types": 0,
         "react-hooks/rules-of-hooks": "error",
-        "no-console": "warn",
-        "quotes": ["error", "single"]
+        "no-console": "warn"
     },
     "settings": {
         "react": {
             "version": "detect"
-          }
+        }
     }
 }
