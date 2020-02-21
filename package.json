@@ -4,8 +4,8 @@
   "description": "Find allergen-free food in your area",
   "private": true,
   "scripts": {
-    "build": "npx webpack",
-    "start": "webpack-dev-server --open",
+    "build": "npx webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
     "lint": "npx eslint 'src/**/*.tsx'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -49,6 +49,7 @@
     "typescript": "^3.8.2",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
   }
 }

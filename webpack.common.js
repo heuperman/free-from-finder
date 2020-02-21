@@ -2,11 +2,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  mode: "development",
-  devtool: "inline-source-map",
-  devServer: {
-    contentBase: "./dist"
-  },
   resolve: {
     extensions: [".ts", ".tsx", ".js"]
   },
