@@ -2,9 +2,10 @@
   "name": "free-from-finder",
   "version": "1.0.0",
   "description": "Find allergen-free food in your area",
-  "main": "src/index.ts",
+  "private": true,
   "scripts": {
     "build": "npx webpack",
+    "start": "webpack-dev-server --open",
     "lint": "npx eslint 'src/**/*.tsx'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,6 +31,7 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "@types/react": "^16.9.21",
     "@types/react-dom": "^16.9.5",
     "@typescript-eslint/eslint-plugin": "^2.20.0",
     "@typescript-eslint/parser": "^2.20.0",
@@ -40,6 +42,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^2.4.0",
+    "html-webpack-plugin": "^3.2.0",
     "prettier": "^1.19.1",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^6.2.1",

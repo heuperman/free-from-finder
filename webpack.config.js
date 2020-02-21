@@ -1,3 +1,6 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
+
 module.exports = {
   mode: "development",
   devtool: "inline-source-map",
@@ -5,7 +8,11 @@ module.exports = {
     contentBase: "./dist"
   },
   resolve: {
-    extensions: [".ts", ".tsx"]
+    extensions: [".ts", ".tsx", ".js"]
+  },
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist")
   },
   module: {
     rules: [
@@ -28,5 +35,10 @@ module.exports = {
   externals: {
     react: "React",
     "react-dom": "ReactDOM"
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "index.html"
+    })
+  ]
 };
