@@ -8,6 +8,7 @@
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "lint": "eslint 'src/**/*.tsx'",
     "test": "jest --watchAll",
+    "test:once": "jest",
     "deploy": "echo 'No deployment procedure specified'"
   },
   "repository": {
