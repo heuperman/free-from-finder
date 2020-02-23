@@ -4,9 +4,9 @@
   "description": "Find allergen-free food in your area",
   "private": true,
   "scripts": {
-    "build": "npx webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js",
     "start": "webpack-dev-server --open --config webpack.dev.js",
-    "lint": "npx eslint 'src/**/*.tsx'",
+    "lint": "eslint 'src/**/*.tsx'",
     "test": "jest --watchAll",
     "deploy": "echo 'No deployment procedure specified'"
   },
