@@ -8,10 +8,14 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:import/errors",
     "plugin:jsx-a11y/recommended",
-    "prettier",
-    "prettier/react"
+    "prettier/@typescript-eslint",
+    "prettier/react",
+    "plugin:jest/recommended",
+    "plugin:jest/style"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -19,6 +23,7 @@
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "project": "./tsconfig.json",
     "ecmaFeatures": {
       "jsx": true
     },
@@ -30,7 +35,8 @@
     "@typescript-eslint",
     "import",
     "jsx-a11y",
-    "react-hooks"
+    "react-hooks",
+    "jest"
   ],
   "rules": {
     "react/prop-types": 0,
@@ -40,6 +46,11 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
     }
   }
 }

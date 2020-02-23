@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap");
+
 *,
 *:before,
 *:after {
@@ -15,11 +17,33 @@ html {
   box-sizing: border-box;
 }
 
-h1,
 h2,
 h3,
 h4,
 h5 {
   line-height: 1.2;
   color: #444444;
+}
+
+h1 {
+  line-height: 1.2;
+  font-size: 28px;
+  color: #89b700;
+}
+
+button {
+  width: 100%;
+  font-size: 18px;
+  padding: 14px 14px;
+  border: 2px solid #89b700;
+  border-radius: 5px;
+  color: white;
+  background-color: #89b700;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.center-text {
+  text-align: center;
 }
