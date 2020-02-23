@@ -47,3 +47,14 @@ button {
 .center-text {
   text-align: center;
 }
+
+.error-message {
+  font-size: 16px;
+  font-weight: normal;
+  padding: 14px 14px;
+  border: 1px solid #b71b00;
+  border-radius: 5px;
+  color: #b71b00;
+  width: max-content;
+  margin: 20px auto 0;
+}
