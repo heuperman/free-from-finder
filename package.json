@@ -30,6 +30,7 @@
   "homepage": "https://github.com/heuperman/free-from-finder#readme",
   "prettier": {},
   "dependencies": {
+    "@reach/router": "^1.3.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
@@ -37,6 +38,7 @@
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^25.1.3",
+    "@types/reach__router": "^1.3.0",
     "@types/react": "^16.9.21",
     "@types/react-dom": "^16.9.5",
     "@typescript-eslint/eslint-plugin": "^2.20.0",

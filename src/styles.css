@@ -44,6 +44,25 @@ button {
   cursor: pointer;
 }
 
+label {
+  font-size: 18px;
+  font-weight: 700;
+  width: 100%;
+  display: block;
+  margin: 0 0 10px;
+}
+
+input {
+  width: 100%;
+  background: transparent;
+  outline: none;
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
 .center-text {
   text-align: center;
 }
@@ -73,4 +92,22 @@ button {
 
 .place p {
   margin: 0;
+}
+
+.cancel {
+  color: #89b700;
+  border: 2px solid #89b700;
+  background-color: white;
+}
+
+.button-container {
+  display: flex;
+}
+
+.form-button {
+  flex: 1;
+}
+
+.button-container button {
+  width: 95%;
 }
