@@ -58,3 +58,19 @@ button {
   width: max-content;
   margin: 20px auto 0;
 }
+
+.place {
+  border-bottom: 2px solid #cde1bc;
+  margin: 0 0 6px;
+  background-color: white;
+  padding: 16px 14px;
+}
+
+.place .name {
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+
+.place p {
+  margin: 0;
+}
