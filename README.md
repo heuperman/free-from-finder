@@ -37,13 +37,15 @@ This app comes with a full suite of unit tests using Jest.
 
 To start the unit tests: `npm run test`. This will start the test suite in watch mode, meaning it will automatically
 rerun and the results will be updated if you make any changes. If you just want to run the test once you can use
-`npm run test -- --watchAll=false` instead.
+`npm run test:once` instead.
 
-## Linting
+## Linting & formatting
 
-This app uses ESLint to help spot problematic patterns in the code and to enforce coding style rules.
+This app uses ESLint and Prettier to help spot errors and to enforce coding style rules.
 
 To run the linter: `npm run lint`.
+
+Ton run the formatter: `npm run format`.
 
 ## Running the app
 
