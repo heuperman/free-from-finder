@@ -7,6 +7,7 @@
     "build": "webpack --config webpack.prod.js",
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "lint": "eslint 'src/**/*.tsx'",
+    "format": "prettier --write '**/*.{tsx,ts,js,html}'",
     "test": "jest --watchAll",
     "test:once": "jest",
     "deploy": "echo 'No deployment procedure specified'"

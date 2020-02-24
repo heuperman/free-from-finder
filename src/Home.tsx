@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Places } from "./Places";
+import { testPlaces } from "../assets/test-places";
 
 export const Home = (): JSX.Element => {
   const [position, setPosition] = useState<Position>();
@@ -20,7 +22,9 @@ export const Home = (): JSX.Element => {
     );
   };
 
-  return (
+  return position ? (
+    <Places places={testPlaces} />
+  ) : (
     <div className="center-text">
       <h1>Free From Finder</h1>
       <button onClick={getPosition}>Find places near me</button>
