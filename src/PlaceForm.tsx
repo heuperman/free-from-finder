@@ -1,14 +1,32 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { Link, RouteComponentProps } from "@reach/router";
+import { PlaceInput } from "./types/placeInput";
 
 export const PlaceForm = (props: RouteComponentProps): JSX.Element => {
-  const defaultFormState = { name: "", description: "", address: "" };
+  const defaultFormState: PlaceInput = {
+    name: "",
+    description: "",
+    address: ""
+  };
 
   const [input, setInput] = useState(defaultFormState);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
     setInput({ ...input, [event.target.name]: event.target.value });
   };
+
+  const inputs = Object.keys(input).map((key: keyof PlaceInput) => (
+    <label key={key}>
+      {key[0].toUpperCase() + key.substring(1)}:
+      <input
+        name={key}
+        type="string"
+        value={input[key]}
+        onChange={handleInputChange}
+        required
+      />
+    </label>
+  ));
 
   return (
     <form
@@ -17,36 +35,7 @@ export const PlaceForm = (props: RouteComponentProps): JSX.Element => {
         console.log(`Name: ${input.name} - details ${input.description}`);
       }}
     >
-      <label>
-        Name:
-        <input
-          name="name"
-          type="string"
-          value={input.name}
-          onChange={handleInputChange}
-          required
-        />
-      </label>
-      <label>
-        Description:
-        <input
-          name="description"
-          type="string"
-          value={input.description}
-          onChange={handleInputChange}
-          required
-        />
-      </label>
-      <label>
-        Address:
-        <input
-          name="address"
-          type="string"
-          value={input.address}
-          onChange={handleInputChange}
-          required
-        />
-      </label>
+      {inputs}
       <div className="button-container">
         <Link to="/" className="form-button">
           <button className="cancel">Cancel</button>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Places } from "./Places";
-import { testPlaces } from "../assets/test-places";
+import { testPlaces } from "./test-places";
 import { Link, RouteComponentProps } from "@reach/router";
 
 export const Home = (props: RouteComponentProps): JSX.Element => {
