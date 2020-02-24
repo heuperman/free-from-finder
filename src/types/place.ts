@@ -1,6 +1,5 @@
-export interface Place {
+import { PlaceInput } from "./placeInput";
+
+export interface Place extends PlaceInput {
   id: string;
-  name: string;
-  address: string;
-  description: string;
 }

@@ -5,9 +5,7 @@ interface PlacesProps {
   places: Place[];
 }
 
-export const Places: React.FC<PlacesProps> = (
-  props: PlacesProps
-): JSX.Element => {
+export const Places = (props: PlacesProps): JSX.Element => {
   const places = props.places.map(place => (
     <div key={place.id} className="place">
       <h2 className="name">{place.name}</h2>

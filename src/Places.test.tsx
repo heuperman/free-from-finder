@@ -3,7 +3,7 @@ import { ShallowWrapper, shallow } from "enzyme";
 import { configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import { Places } from "./Places";
-import { testPlaces } from "../assets/test-places";
+import { testPlaces } from "./test-places";
 
 describe("Home component", () => {
   configure({ adapter: new Adapter() });

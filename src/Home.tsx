@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Places } from "./Places";
-import { testPlaces } from "../assets/test-places";
+import { testPlaces } from "./test-places";
+import { Link, RouteComponentProps } from "@reach/router";
 
-export const Home = (): JSX.Element => {
+export const Home = (props: RouteComponentProps): JSX.Element => {
   const [position, setPosition] = useState<Position>();
   const [positionError, setPositionError] = useState<PositionError>();
 
@@ -23,7 +24,12 @@ export const Home = (): JSX.Element => {
   };
 
   return position ? (
-    <Places places={testPlaces} />
+    <div>
+      <Places places={testPlaces} />
+      <Link to="place/new">
+        <button>Add a new place</button>
+      </Link>
+    </div>
   ) : (
     <div className="center-text">
       <h1>Free From Finder</h1>
