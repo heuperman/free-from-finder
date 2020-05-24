@@ -8,7 +8,7 @@ import { auth, uiConfig } from "./Firebase";
 export const Home = (): JSX.Element => {
   const [signedInState, setSingedInState] = useState<string>("unknown");
   useEffect(() => {
-    const unregisterAuthObserver = auth().onAuthStateChanged(user =>
+    const unregisterAuthObserver = auth.onAuthStateChanged(user =>
       setSingedInState(user ? "signedIn" : "notSignedIn")
     );
     return unregisterAuthObserver;
@@ -18,7 +18,7 @@ export const Home = (): JSX.Element => {
     <div>
       <h1>Free From Finder</h1>
       <p>Please sign-in:</p>
-      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth()} />
+      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} />
     </div>
   ) : signedInState === "signedIn" ? (
     <div>
@@ -28,7 +28,7 @@ export const Home = (): JSX.Element => {
       </Router>
       <button
         className="muted-button"
-        onClick={(): Promise<void> => auth().signOut()}
+        onClick={(): Promise<void> => auth.signOut()}
       >
         Sign-out
       </button>

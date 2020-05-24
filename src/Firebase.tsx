@@ -28,5 +28,5 @@ export const uiConfig: firebaseui.auth.Config = {
   ],
   credentialHelper: "none"
 };
-export const auth = firebase.auth;
+export const auth = firebase.auth();
 export const database = firebase.firestore();
