@@ -11,7 +11,7 @@ describe("Home component", () => {
   let places: ShallowWrapper;
 
   beforeEach(() => {
-    component = shallow(<Places places={testPlaces} />);
+    component = shallow(<Places />);
     places = component.find(".place");
   });
 

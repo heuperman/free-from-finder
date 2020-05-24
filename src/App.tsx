@@ -1,14 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import "./styles.css";
 import { Home } from "./Home";
-import { Router } from "@reach/router";
-import { PlaceForm } from "./PlaceForm";
+import "../styles.css";
 
-render(
-  <Router>
-    <Home path="/" />
-    <PlaceForm path="place/new" />
-  </Router>,
-  document.getElementById("root")
-);
+render(<Home></Home>, document.getElementById("root"));

@@ -1,44 +1,39 @@
-import React, { useState } from "react";
-import { Places } from "./Places";
-import { testPlaces } from "./test-places";
-import { Link, RouteComponentProps } from "@reach/router";
+import React, { useState, useEffect } from "react";
+import { Router } from "@reach/router";
+import { PlaceForm } from "./PlaceForm";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import { PlacesList } from "./PlacesList";
+import { auth, uiConfig } from "./Firebase";
 
-export const Home = (props: RouteComponentProps): JSX.Element => {
-  const [position, setPosition] = useState<Position>();
-  const [positionError, setPositionError] = useState<PositionError>();
-
-  const onLocationSucces = (currentPosition: Position): void => {
-    setPosition(currentPosition);
-  };
-
-  const onLocationError = (error: PositionError): void => {
-    setPositionError(error);
-  };
-
-  const getPosition = (): void => {
-    navigator.geolocation.getCurrentPosition(
-      onLocationSucces,
-      onLocationError,
-      { timeout: 5000 }
+export const Home = (): JSX.Element => {
+  const [signedInState, setSingedInState] = useState<string>("unknown");
+  useEffect(() => {
+    const unregisterAuthObserver = auth().onAuthStateChanged(user =>
+      setSingedInState(user ? "signedIn" : "notSignedIn")
     );
-  };
+    return unregisterAuthObserver;
+  }, []);
 
-  return position ? (
+  return signedInState === "notSignedIn" ? (
     <div>
-      <Places places={testPlaces} />
-      <Link to="place/new">
-        <button>Add a new place</button>
-      </Link>
+      <h1>Free From Finder</h1>
+      <p>Please sign-in:</p>
+      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth()} />
+    </div>
+  ) : signedInState === "signedIn" ? (
+    <div>
+      <Router>
+        <PlacesList path="/"></PlacesList>
+        <PlaceForm path="/places/new"></PlaceForm>
+      </Router>
+      <button
+        className="muted-button"
+        onClick={(): Promise<void> => auth().signOut()}
+      >
+        Sign-out
+      </button>
     </div>
   ) : (
-    <div className="center-text">
-      <h1>Free From Finder</h1>
-      <button onClick={getPosition}>Find places near me</button>
-      {positionError && (
-        <h2 className="error-message">
-          Please allow location access to see nearby places
-        </h2>
-      )}
-    </div>
+    <h2>Loading...</h2>
   );
 };

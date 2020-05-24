@@ -20,16 +20,10 @@ the basic infrastructure and records are in place the project will expand to inc
 
 This project requires [node and npm](https://nodejs.org/en/) to be installed on your computer.
 
-#### Mac / Unix
-
 - Clone the project by typing `git clone https://github.com/heuperman/free-from-finder.git` in your terminal.
 - Install the required dependencies: `npm install`.
 - Open the project in your favourite editor. If you don't have an editor installed
   try [VSCode](https://code.visualstudio.com/), it's free and very capable.
-
-#### Windows
-
-_Coming soon_
 
 ## Running tests
 
