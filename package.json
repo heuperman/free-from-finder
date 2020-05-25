@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Find allergen-free food in your area",
   "private": true,
-  "homepage": "https://heuperman.github.io/free-from-finder",
+  "homepage": "https://free-from-finder.web.app/",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "webpack-dev-server --open --config webpack.dev.js",
