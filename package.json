@@ -11,7 +11,7 @@
     "format": "prettier --write '**/*.{tsx,ts,js,html}'",
     "test": "echo 'No tests specified'",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -u 'Cornelis Heuperman <cheuperman@gmail.com>'"
   },
   "repository": {
     "type": "git",
