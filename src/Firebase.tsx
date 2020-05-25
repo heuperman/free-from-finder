@@ -8,7 +8,7 @@ const firebaseConfig = {
   databaseURL: "https://free-from-finder.firebaseio.com",
   projectId: "free-from-finder",
   storageBucket: "free-from-finder.appspot.com",
-  messagingSenderId: process.env.FIREBASE_SENDER_ID,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.FIREBASE_APP_ID,
   measurementId: process.env.FIREBASE_MEASUREMENT_ID
 };
