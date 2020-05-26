@@ -7,7 +7,7 @@ export const PlaceForm = (props: RouteComponentProps): JSX.Element => {
   const defaultFormState: PlaceInput = {
     name: "",
     description: "",
-    address: ""
+    address: "",
   };
   const navigate = useNavigate();
   const [input, setInput] = useState(defaultFormState);
@@ -25,7 +25,7 @@ export const PlaceForm = (props: RouteComponentProps): JSX.Element => {
     database
       .collection("places")
       .add({
-        ...input
+        ...input,
       })
       .then(goBack);
   };
@@ -39,7 +39,9 @@ export const PlaceForm = (props: RouteComponentProps): JSX.Element => {
           type="text"
           value={input[key]}
           onChange={handleInputChange}
-        ></input>
+          required
+        >
+        </input>
       </label>
     </div>
   ));
