@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
-import { PlaceInput } from "./types/placeInput";
+import { PlaceInput } from "./interfaces/placeInput";
 import { database } from "./Firebase";
 import { RouteComponentProps, useNavigate } from "@reach/router";
 
