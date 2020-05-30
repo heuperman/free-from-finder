@@ -53,15 +53,19 @@ export const PlacesList = (props: RouteComponentProps): JSX.Element => {
   return position ? (
     <div>
       <Places />
-      <Button
-        text="Add a new place"
-        onClick={(): Promise<void> => navigate("/places/new")}
-      />
+      <div className="list-actions">
+        <Button
+          text="Add a new place"
+          onClick={(): Promise<void> => navigate("/places/new")}
+        />
+      </div>
     </div>
   ) : noStoredPosition ? (
     <div className="center-text">
       <h1>Free From Finder</h1>
-      <Button text="Find places near me" onClick={getPosition} />
+      <div className="list-actions">
+        <Button text="Find places near me" onClick={getPosition} />
+      </div>
       {positionError && (
         <h2 className="error-message">
           Please allow location access to see nearby places

@@ -2,17 +2,18 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import { PlaceInput } from "./interfaces/placeInput";
 import { database } from "./Firebase";
 import { RouteComponentProps, useNavigate } from "@reach/router";
+import { Form } from "./components/form";
 
 export const PlaceForm = (props: RouteComponentProps): JSX.Element => {
   const defaultFormState: PlaceInput = {
     name: "",
-    description: "",
     address: "",
+    description: ""
   };
   const navigate = useNavigate();
   const [input, setInput] = useState(defaultFormState);
 
-  const goBack = (): void => {
+  const handleCancel = (): void => {
     navigate("../", { replace: true });
   };
 
@@ -20,39 +21,30 @@ export const PlaceForm = (props: RouteComponentProps): JSX.Element => {
     setInput({ ...input, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = (event: FormEvent): void => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     database
       .collection("places")
       .add({
-        ...input,
+        ...input
       })
-      .then(goBack);
+      .then(handleCancel);
   };
 
-  const formFields = Object.keys(input).map((key: keyof PlaceInput) => (
-    <div key={key}>
-      <label>
-        {key[0].toUpperCase() + key.substring(1)}
-        <input
-          name={key}
-          type="text"
-          value={input[key]}
-          onChange={handleInputChange}
-          required
-        >
-        </input>
-      </label>
-    </div>
-  ));
+  const formFields = Object.keys(input).map((key: keyof PlaceInput) => ({
+    label: key[0].toUpperCase() + key.substring(1),
+    name: key,
+    type: "text",
+    required: true
+  }));
 
   return (
-    <form onSubmit={handleSubmit}>
-      {formFields}
-      <button className="muted-button" type="reset" onClick={goBack}>
-        Cancel
-      </button>
-      <button type="submit">Submit</button>
-    </form>
+    <Form
+      onSubmit={handleSubmit}
+      onCancel={handleCancel}
+      onChange={handleInputChange}
+      input={input}
+      formFields={formFields}
+    />
   );
 };

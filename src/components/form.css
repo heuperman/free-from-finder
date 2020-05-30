@@ -1,0 +1,38 @@
+.input {
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  padding: 0.75rem;
+  outline: none;
+  background: transparent;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  line-height: 1;
+}
+
+.input:hover {
+  border: 1px solid #c5c5c5;
+}
+
+.input:active,
+.input:focus {
+  border: 1px solid #90be6d;
+}
+
+.label {
+  font-weight: 700;
+  max-width: 100%;
+  display: block;
+  margin: 1rem 0 0.5rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.form-actions button {
+  flex: 0 0 47%;
+}

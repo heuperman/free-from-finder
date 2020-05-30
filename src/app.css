@@ -6,3 +6,12 @@ body {
 a {
   color: #90be6d;
 }
+
+.list-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.list-actions button {
+  flex: 0 0 96%;
+}
