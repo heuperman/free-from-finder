@@ -1,27 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Router } from "@reach/router";
 import { PlaceForm } from "./PlaceForm";
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { PlacesList } from "./PlacesList";
-import { auth, uiConfig } from "./Firebase";
+import { auth } from "./Firebase";
 import { Button } from "./components/button";
+import { ProtectedRoute } from "./components/protectedRoute";
 
 export const Home = (): JSX.Element => {
-  const [signedInState, setSingedInState] = useState<string>("unknown");
-  useEffect(() => {
-    const unregisterAuthObserver = auth.onAuthStateChanged(user =>
-      setSingedInState(user ? "signedIn" : "notSignedIn")
-    );
-    return unregisterAuthObserver;
-  }, []);
-
-  return signedInState === "notSignedIn" ? (
-    <div>
-      <h1>Free From Finder</h1>
-      <p>Please sign-in:</p>
-      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} />
-    </div>
-  ) : signedInState === "signedIn" ? (
+  return (
     <div>
       <Button
         muted
@@ -29,11 +15,9 @@ export const Home = (): JSX.Element => {
         onClick={(): Promise<void> => auth.signOut()}
       />
       <Router>
-        <PlacesList path="/"></PlacesList>
-        <PlaceForm path="/places/new"></PlaceForm>
+        <PlacesList path="/" />
+        <ProtectedRoute component={<PlaceForm />} path="/places/new" />
       </Router>
     </div>
-  ) : (
-    <h2>Loading...</h2>
   );
 };
