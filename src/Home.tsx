@@ -4,6 +4,7 @@ import { PlaceForm } from "./PlaceForm";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { PlacesList } from "./PlacesList";
 import { auth, uiConfig } from "./Firebase";
+import { Button } from "./components/button";
 
 export const Home = (): JSX.Element => {
   const [signedInState, setSingedInState] = useState<string>("unknown");
@@ -22,16 +23,15 @@ export const Home = (): JSX.Element => {
     </div>
   ) : signedInState === "signedIn" ? (
     <div>
+      <Button
+        muted
+        text="Sign out"
+        onClick={(): Promise<void> => auth.signOut()}
+      />
       <Router>
         <PlacesList path="/"></PlacesList>
         <PlaceForm path="/places/new"></PlaceForm>
       </Router>
-      <button
-        className="muted-button"
-        onClick={(): Promise<void> => auth.signOut()}
-      >
-        Sign-out
-      </button>
     </div>
   ) : (
     <h2>Loading...</h2>

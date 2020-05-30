@@ -1,0 +1,17 @@
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+}
+
+a {
+  color: #90be6d;
+}
+
+.list-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.list-actions button {
+  flex: 0 0 96%;
+}

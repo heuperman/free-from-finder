@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Places } from "./Places";
 import { RouteComponentProps, navigate } from "@reach/router";
+import { Button } from "./components/button";
 
 export const PlacesList = (props: RouteComponentProps): JSX.Element => {
   const [position, setPosition] = useState<Position>();
@@ -52,14 +53,19 @@ export const PlacesList = (props: RouteComponentProps): JSX.Element => {
   return position ? (
     <div>
       <Places />
-      <button onClick={(): Promise<void> => navigate("/places/new")}>
-        Add a new place
-      </button>
+      <div className="list-actions">
+        <Button
+          text="Add a new place"
+          onClick={(): Promise<void> => navigate("/places/new")}
+        />
+      </div>
     </div>
   ) : noStoredPosition ? (
     <div className="center-text">
       <h1>Free From Finder</h1>
-      <button onClick={getPosition}>Find places near me</button>
+      <div className="list-actions">
+        <Button text="Find places near me" onClick={getPosition} />
+      </div>
       {positionError && (
         <h2 className="error-message">
           Please allow location access to see nearby places
