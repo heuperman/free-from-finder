@@ -23,13 +23,11 @@ export const Home = (): JSX.Element => {
     </div>
   ) : signedInState === "signedIn" ? (
     <div>
-      <div className="menu-bar">
-        <Button
-          muted
-          text="Sign out"
-          onClick={(): Promise<void> => auth.signOut()}
-        />
-      </div>
+      <Button
+        muted
+        text="Sign out"
+        onClick={(): Promise<void> => auth.signOut()}
+      />
       <Router>
         <PlacesList path="/"></PlacesList>
         <PlaceForm path="/places/new"></PlaceForm>
