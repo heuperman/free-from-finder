@@ -12,6 +12,10 @@
   font: inherit;
 }
 
+.firebaseui-container.mdl-card.mdl-shadow--2dp {
+  box-shadow: none;
+}
+
 .firebaseui-container.firebaseui-page-provider-sign-in {
   background: transparent;
   box-shadow: none;
