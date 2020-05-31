@@ -1,7 +1,8 @@
 import { RouteComponentProps } from "@reach/router";
 import React, { useState, useEffect } from "react";
 import { auth, uiConfig } from "../Firebase";
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import FirebaseAuth from "react-firebaseui/FirebaseAuth";
+import "./protectedRoute.css";
 
 interface ProtectedRouteProps extends RouteComponentProps {
   component: JSX.Element;
@@ -21,8 +22,8 @@ export const ProtectedRoute = ({
   return signedInState === "notSignedIn" ? (
     <div>
       <h1>Free From Finder</h1>
-      <p>You need to be signed in to add new places:</p>
-      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} />
+      <p>Please sign in to add new places:</p>
+      <FirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} />
     </div>
   ) : signedInState === "signedIn" ? (
     component

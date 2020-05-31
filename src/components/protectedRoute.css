@@ -1,0 +1,169 @@
+.firebaseui-container {
+  background: rgba(0, 0, 0, 0.05);
+  margin-bottom: 15px;
+  min-height: 150px;
+  padding-top: 10px;
+  border-radius: 20px;
+  box-shadow: none;
+}
+
+.firebaseui-container.mdl-card {
+  font-family: "Nunito", sans-serif;
+  font: inherit;
+}
+
+.firebaseui-container.firebaseui-page-provider-sign-in {
+  background: transparent;
+  box-shadow: none;
+  min-height: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+}
+
+.firebaseui-container.firebaseui-id-page-callback {
+  background: transparent;
+  box-shadow: none;
+  margin-top: 40px;
+  height: 84px;
+  min-height: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+}
+
+.firebaseui-card-header {
+  display: none;
+}
+
+.firebaseui-subtitle,
+.firebaseui-text {
+  color: #24292e;
+}
+
+.firebaseui-form-actions
+  .mdl-button--raised.mdl-button--colored.firebaseui-button {
+  background: rgba(0, 0, 0, 0.1);
+}
+.firebaseui-id-dismiss-info-bar {
+  display: block;
+}
+.firebaseui-info-bar {
+  border: 0;
+  border-radius: 10px;
+  left: 5%;
+  right: 5%;
+  top: 10%;
+  bottom: 10%;
+}
+
+.firebaseui-textfield.mdl-textfield .firebaseui-input {
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  padding: 0.75rem;
+  outline: none;
+  background: transparent;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  line-height: 1;
+}
+
+.firebaseui-textfield.mdl-textfield
+  .mdl-textfield__input.firebaseui-input-invalid {
+  border: 1px solid #dd2c00;
+  border-radius: 4px;
+  padding: 0.75rem;
+  outline: none;
+  background: transparent;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  line-height: 1;
+}
+
+.firebaseui-form-actions
+  .mdl-button--raised.mdl-button--colored.firebaseui-button {
+  border: 1px solid #90be6d;
+  border-radius: 4px;
+  background: #90be6d;
+  color: #ffffff;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: none;
+  padding: 0.75rem 1.25rem;
+  margin: 0 0 0.5rem 0;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  height: auto;
+  width: 47%;
+  box-shadow: none;
+}
+
+.firebaseui-form-links
+  + .firebaseui-form-actions
+  .mdl-button--raised.mdl-button--colored.firebaseui-button[type="submit"] {
+  width: 100%;
+}
+
+.firebaseui-form-links + .firebaseui-form-actions {
+  width: 44%;
+}
+
+div.firebaseui-error-wrapper {
+  min-height: 0;
+}
+
+label.mdl-textfield__label.firebaseui-label {
+  font-family: "Nunito", sans-serif;
+  color: #24292e;
+  position: initial;
+  transition-property: none;
+}
+
+.mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
+.mdl-textfield--floating-label.is-focused
+  .mdl-textfield__label.firebaseui-label {
+  color: #24292e;
+  font-size: inherit;
+}
+
+.mdl-textfield--floating-label.is-invalid
+  .mdl-textfield__label.firebaseui-label {
+  color: #24292e;
+  font-size: inherit;
+}
+
+.firebaseui-card-content,
+.mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
+.mdl-textfield--floating-label.is-focused
+  label.mdl-textfield__label.firebaseui-label {
+  color: #24292e !important;
+  font-size: inherit !important;
+}
+
+label.mdl-textfield__label.firebaseui-label::after {
+  display: none;
+}
+
+.firebaseui-textfield.mdl-textfield {
+  padding: 0;
+}
+
+p.firebaseui-error.firebaseui-text-input-error {
+  font-family: "Nunito", sans-serif;
+  font-size: inherit;
+  position: relative;
+  top: 0;
+  margin: 0 0 1rem;
+}
+
+div.firebaseui-form-links {
+  width: 44%;
+}

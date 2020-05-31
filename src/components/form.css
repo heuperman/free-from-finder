@@ -7,8 +7,8 @@
   margin-bottom: 0.5rem;
   font-size: 1rem;
   box-sizing: border-box;
-  width: 100%;
-  max-width: 100%;
+  width: 92%;
+  max-width: 92%;
   line-height: 1;
 }
 
@@ -23,7 +23,7 @@
 
 .label {
   font-weight: 700;
-  max-width: 100%;
+  max-width: 92%;
   display: block;
   margin: 1rem 0 0.5rem;
 }
@@ -34,5 +34,5 @@
 }
 
 .form-actions button {
-  flex: 0 0 47%;
+  flex: 0 0 44%;
 }
