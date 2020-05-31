@@ -1,6 +1,7 @@
 body {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
+  color: #24292e;
 }
 
 a {
@@ -13,5 +14,5 @@ a {
 }
 
 .list-actions button {
-  flex: 0 0 96%;
+  flex: 0 0 92%;
 }
