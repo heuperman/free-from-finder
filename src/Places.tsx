@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Place } from "./interfaces/place";
 import { database } from "./Firebase";
 import { Card } from "./components/card";
+import { RouteComponentProps } from "@reach/router";
 
-export const Places = (): JSX.Element => {
+export const Places = (props: RouteComponentProps): JSX.Element => {
   const [places, setPlaces] = useState<Place[]>([]);
   useEffect(() => {
     database
