@@ -1,9 +1,10 @@
+.protected-route {
+  margin: 20px 20px 0;
+}
+
 .firebaseui-container {
-  background: rgba(0, 0, 0, 0.05);
-  margin-bottom: 15px;
-  min-height: 150px;
-  padding-top: 10px;
-  border-radius: 20px;
+  margin: 0;
+  padding-top: 20px;
   box-shadow: none;
 }
 
@@ -36,6 +37,19 @@
 
 .firebaseui-card-header {
   display: none;
+}
+
+.firebaseui-container .firebaseui-card-content {
+  padding: 0;
+}
+
+.firebaseui-container .firebaseui-card-actions {
+  padding: 0;
+}
+
+.firebaseui-container .firebaseui-textfield.mdl-textfield .firebaseui-input {
+  font-family: inherit;
+  margin-bottom: 20px;
 }
 
 .firebaseui-subtitle,
@@ -90,9 +104,9 @@
 
 .firebaseui-form-actions
   .mdl-button--raised.mdl-button--colored.firebaseui-button {
-  border: 1px solid #90be6d;
+  border: 1px solid #76ac4c;
   border-radius: 4px;
-  background: #90be6d;
+  background: #76ac4c;
   color: #ffffff;
   font-family: "Nunito", sans-serif;
   font-weight: 700;
@@ -144,12 +158,12 @@ label.mdl-textfield__label.firebaseui-label {
   font-size: inherit;
 }
 
-.firebaseui-card-content,
-.mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
-.mdl-textfield--floating-label.is-focused
-  label.mdl-textfield__label.firebaseui-label {
-  color: #24292e !important;
-  font-size: inherit !important;
+.firebaseui-container
+  .firebaseui-textfield
+  .mdl-textfield__label.firebaseui-label {
+  font-weight: 700;
+  color: #24292e;
+  font-size: inherit;
 }
 
 label.mdl-textfield__label.firebaseui-label::after {
@@ -168,6 +182,14 @@ p.firebaseui-error.firebaseui-text-input-error {
   margin: 0 0 1rem;
 }
 
-div.firebaseui-form-links {
+.firebaseui-card-actions .firebaseui-form-links {
   width: 44%;
+}
+
+.firebaseui-card-actions .firebaseui-link {
+  color: #76ac4c;
+}
+
+.firebaseui-busy-indicator {
+  display: none !important;
 }

@@ -20,9 +20,8 @@ export const ProtectedRoute = ({
   }, []);
 
   return signedInState === "notSignedIn" ? (
-    <div>
-      <h1>Free From Finder</h1>
-      <p>Please sign in to add new places:</p>
+    <div className="protected-route">
+      <p>Please sign in or register to add new places:</p>
       <FirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} />
     </div>
   ) : signedInState === "signedIn" ? (

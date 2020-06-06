@@ -1,18 +1,38 @@
-body {
+html {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
   color: #24292e;
 }
 
+html * {
+  box-sizing: border-box;
+}
+
 a {
-  color: #90be6d;
+  color: #76ac4c;
 }
 
-.list-actions {
+a:hover {
+  color: #5d9333;
+}
+
+a:visited {
+  color: #5d9333;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: 48px calc(100vh - 96px) 48px;
+  height: 100vh;
+}
+
+.router {
+  overflow: scroll;
+}
+
+.home {
+  margin: 0 20px;
   display: flex;
+  align-items: center;
   justify-content: center;
-}
-
-.list-actions button {
-  flex: 0 0 92%;
 }
