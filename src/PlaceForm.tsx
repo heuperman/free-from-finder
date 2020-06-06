@@ -14,7 +14,7 @@ export const PlaceForm = (props: RouteComponentProps): JSX.Element => {
   const [input, setInput] = useState(defaultFormState);
 
   const handleCancel = (): void => {
-    navigate("../", { replace: true });
+    navigate(-1);
   };
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {

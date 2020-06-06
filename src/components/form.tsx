@@ -38,12 +38,10 @@ export const Form = ({
   ));
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="form">
       {formFieldElements}
-      <div className="form-actions">
-        <Button muted type="reset" text="Cancel" onClick={onCancel} />
-        <Button type="submit" text="Submit" />
-      </div>
+      <Button muted type="reset" text="Cancel" onClick={onCancel} />
+      <Button type="submit" text="Submit" />
     </form>
   );
 };

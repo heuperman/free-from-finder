@@ -9,7 +9,15 @@ html * {
 }
 
 a {
-  color: #90be6d;
+  color: #76ac4c;
+}
+
+a:hover {
+  color: #5d9333;
+}
+
+a:visited {
+  color: #5d9333;
 }
 
 .app {
@@ -20,4 +28,11 @@ a {
 
 .router {
   overflow: scroll;
+}
+
+.home {
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

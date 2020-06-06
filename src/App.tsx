@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import { Home } from "./Home";
 import "./app.css";
 import { Header } from "./components/header";
-import { Router } from "@reach/router";
+import { Router, Location, LocationContext } from "@reach/router";
 import { Places } from "./Places";
 import { ProtectedRoute } from "./components/protectedRoute";
 import { PlaceForm } from "./PlaceForm";
@@ -17,7 +17,15 @@ render(
       <Places path="/places" />
       <ProtectedRoute component={<PlaceForm />} path="/places/new" />
     </Router>
-    <Footer></Footer>
+    <Location>
+      {(locationContext: LocationContext): JSX.Element => {
+        return (
+          locationContext.location.pathname !== "/places/new" && (
+            <Footer></Footer>
+          )
+        );
+      }}
+    </Location>
   </div>,
   document.getElementById("root")
 );
