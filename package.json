@@ -1,7 +1,24 @@
 {
-  "name": "fff-vue",
-  "version": "0.1.0",
+  "name": "free-from-finder",
+  "version": "0.0.1",
+  "description": "Find allergen-free food in your area",
   "private": true,
+  "homepage": "https://free-from-finder.web.app/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heuperman/free-from-finder.git"
+  },
+  "keywords": [
+    "allergens",
+    "food",
+    "restaurants",
+    "gluten-free"
+  ],
+  "author": "Cornelis Heuperman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heuperman/free-from-finder/issues"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -10,6 +27,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "firebase": "^7.15.0",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
@@ -39,35 +57,8 @@
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
+    "vue-cli-plugin-svg": "~0.1.3",
     "vue-template-compiler": "^2.6.11"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended",
-      "@vue/typescript/recommended",
-      "@vue/prettier",
-      "@vue/prettier/@typescript-eslint"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 2020
-    },
-    "rules": {},
-    "overrides": [
-      {
-        "files": [
-          "**/__tests__/*.{j,t}s?(x)",
-          "**/tests/unit/**/*.spec.{j,t}s?(x)"
-        ],
-        "env": {
-          "jest": true
-        }
-      }
-    ]
   },
   "browserslist": [
     "> 1%",
@@ -76,5 +67,11 @@
   ],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel"
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
   }
 }
