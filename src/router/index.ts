@@ -31,7 +31,7 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/places',
-    name: 'Place',
+    name: 'Places',
     component: () => import('../views/Places.vue')
   },
   {
@@ -51,7 +51,8 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.meta?.authGuard && !auth.currentUser) next({ name: 'Login' })
+  if (to.meta?.authGuard && !auth.currentUser)
+    next({ name: 'Login', query: { redirect: to.path } })
   else next()
 })
 

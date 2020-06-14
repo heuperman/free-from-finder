@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Spinner v-if="loading" class="spinner" />
     <Card
       v-for="place in places"
       :key="place.id"
@@ -7,6 +8,7 @@
       :link="toMapLink(place.name, place.address)"
       :linkText="place.address"
       :content="place.description"
+      :icon="place.category"
     />
   </div>
 </template>
@@ -14,12 +16,14 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import Card from '@/components/Card.vue'
+import Spinner from '@/components/Spinner.vue'
 import { database } from '@/firebase'
 import { Place } from '@/types/place'
 
 @Component({
   components: {
-    Card
+    Card,
+    Spinner
   }
 })
 export default class Places extends Vue {
@@ -31,7 +35,10 @@ export default class Places extends Vue {
     this.$store.commit('setPlaces', places)
   }
 
+  private loading = false
+
   private async fetchPlaces() {
+    this.loading = true
     try {
       const result = await database
         .collection('places')
@@ -46,6 +53,7 @@ export default class Places extends Vue {
     } catch (error) {
       alert(error.message)
     }
+    this.loading = false
   }
 
   private toMapLink(name: string, address: string) {
@@ -59,3 +67,10 @@ export default class Places extends Vue {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.spinner {
+  height: 66vh;
+  width: 100%;
+}
+</style>
